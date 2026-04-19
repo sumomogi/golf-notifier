@@ -28,3 +28,7 @@ def test_weekend_before_message():
     msg = compose("weekend_before", event, TEMPLATES)
     assert "今週水曜日" in msg
     assert "4月29日" in msg
+
+def test_unknown_touchpoint_raises():
+    with pytest.raises(KeyError):
+        compose("nonexistent", date(2026, 4, 27), TEMPLATES)
