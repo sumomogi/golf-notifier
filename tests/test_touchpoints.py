@@ -42,3 +42,10 @@ def test_night_before_takes_priority_over_weekend():
     result = get_touchpoints(event, today)
     assert "night_before" in result
     assert "weekend_before" not in result
+
+def test_weekend_before_does_not_fire_for_sunday_event():
+    # Golf on a Sunday — weekend_before should NOT fire from the prior Saturday
+    event = date(2026, 4, 26)  # Sunday
+    today = date(2026, 4, 18)  # Saturday, 8 days before
+    result = get_touchpoints(event, today)
+    assert "weekend_before" not in result

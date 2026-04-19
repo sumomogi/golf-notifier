@@ -14,11 +14,11 @@ def get_touchpoints(event_date: date, today: date) -> list[str]:
         return result  # week_before on the exact 7-day mark; no weekend duplicate
 
     if today.weekday() in (5, 6):  # Saturday=5, Sunday=6
-        # Check event is in the coming Mon-Fri of the same week or next
+        # Check event is in the coming Mon-Fri
         days_until_next_monday = (7 - today.weekday()) % 7 or 7
         next_monday = today + timedelta(days=days_until_next_monday)
-        next_sunday = next_monday + timedelta(days=6)
-        if next_monday <= event_date <= next_sunday and delta > 1:
+        next_friday = next_monday + timedelta(days=4)
+        if next_monday <= event_date <= next_friday and delta > 1:
             result.append("weekend_before")
 
     return result
