@@ -22,6 +22,7 @@ def fetch_golf_events(tag: str, lookahead_days: int) -> list[dict]:
 
     tell application "Calendar"
         repeat with cal in calendars
+            set calName to name of cal
             set evts to (every event of cal whose start date >= startDate and start date <= endDate)
             repeat with evt in evts
                 set evtTitle to summary of evt
@@ -37,7 +38,7 @@ def fetch_golf_events(tag: str, lookahead_days: int) -> list[dict]:
                         set evtTags to evtTags & name of t & ","
                     end repeat
                 end try
-                if evtTags contains tagToFind or evtNotes contains tagToFind or evtTitle contains tagToFind then
+                if calName contains tagToFind or evtTags contains tagToFind or evtNotes contains tagToFind or evtTitle contains tagToFind then
                     set evtDate to start date of evt
                     set evtUid to uid of evt
                     set end of resultList to (evtUid & "|" & (year of evtDate as text) & "-" & (month of evtDate as integer as text) & "-" & (day of evtDate as text) & "|" & evtTitle)
