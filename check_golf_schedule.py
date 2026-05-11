@@ -34,7 +34,8 @@ def main():
             if tracker.already_sent(event["id"], today, tp):
                 print(f"  SKIP (already sent): {event['title']} on {event['date']} [{tp}]")
                 continue
-            message = compose(tp, event["date"], config["messages"])
+            locale = config.get("locale", "en")
+            message = compose(tp, event["date"], config["messages"], locale)
             print(f"  SEND [{tp}] to {config['recipient']}: {message}")
             if not dry_run:
                 send_imessage(config["recipient"], message)

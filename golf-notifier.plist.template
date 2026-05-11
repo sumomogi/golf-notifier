@@ -4,11 +4,11 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.takase.golf-notifier</string>
+    <string>golf-notifier</string>
     <key>ProgramArguments</key>
     <array>
         <string>/usr/bin/python3</string>
-        <string>/Users/cheolwooklee/golf_notifier/check_golf_schedule.py</string>
+        <string>INSTALL_DIR/check_golf_schedule.py</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>
@@ -18,9 +18,9 @@
         <integer>50</integer>
     </dict>
     <key>StandardOutPath</key>
-    <string>/Users/cheolwooklee/golf_notifier/run.log</string>
+    <string>INSTALL_DIR/run.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/cheolwooklee/golf_notifier/error.log</string>
+    <string>INSTALL_DIR/error.log</string>
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>

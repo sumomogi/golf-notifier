@@ -1,0 +1,13 @@
+{
+  "recipient": "+1XXXXXXXXXX",
+  "recipient_name": "Your Recipient",
+  "calendar_tag": "Golf",
+  "lookahead_days": 14,
+  "send_time": "20:50",
+  "locale": "en",
+  "messages": {
+    "week_before": "Heads up: I have golf next {weekday} ({date}), so I won't be able to drop you off in the morning. Just a heads up!",
+    "weekend_before": "Reminder: I have golf this {weekday} ({date}), so morning drop-off might not be possible. Please plan accordingly.",
+    "night_before": "Just a reminder: I have golf tomorrow ({date}), so I won't be able to drive you in the morning. Sorry for the inconvenience!"
+  }
+}
